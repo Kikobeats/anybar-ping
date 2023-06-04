@@ -3,7 +3,7 @@
 ![Last version](https://img.shields.io/github/tag/Kikobeats/anybar-ping.svg?style=flat-square)
 [![NPM Status](https://img.shields.io/npm/dm/anybar-ping.svg?style=flat-square)](https://www.npmjs.org/package/anybar-ping)
 
-> Menubar status indicator for internet health check.
+> Menubar status indicator to check internet connection.
 
 ## Install
 
@@ -17,10 +17,20 @@ $ npm install anybar-ping --global
 ## Usage
 
 ```bash
-$ anybar-ping start
+$ anybar-ping --help
 
-# after a while, when you don't need it more
-anybar-ping stop
+Usage
+  anybar <start|stop> [flags]
+
+Flags
+  --debug       Enable verbose log level [default=false].
+  --interval    Wait N milliseconds between sending each packet [default=5000].
+  --source      Use the following IP address as the source address in outgoing packets [default=1.1.1.1].
+  --timeout     Time in milliseconds to wait for a reply for each packet sent [default=1000].
+
+Examples
+  anybar-ping start --source 8.8.8.8
+  anybar-ping stop # after a while, when you don't need it more
 ```
 
 ## License

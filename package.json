@@ -25,6 +25,7 @@
   "dependencies": {
     "anybar": "~5.1.0",
     "execa": "~7.1.1",
+    "mri": "~1.2.0",
     "open": "~9.1.0",
     "ps-list": "~8.1.1"
   },

@@ -8,5 +8,5 @@ const anybar = await psList().then(psList =>
   psList.find(({ name }) => name === 'AnyBar')
 )
 
-process.kill(anybarPing.pid, 'SIGINT')
-process.kill(anybar.pid, 'SIGINT')
+if (anybarPing?.pid) process.kill(anybarPing.pid, 'SIGINT')
+if (anybar?.pid) process.kill(anybar.pid, 'SIGINT')

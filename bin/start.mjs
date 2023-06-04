@@ -3,9 +3,20 @@ import send from 'anybar'
 
 process.title = 'anybar-ping'
 
-await $`open -a AnyBar`
+const { source, verbose, interval, timeout } = JSON.parse(process.argv[2] ?? '')
 
-const subprocess = execaCommand('ping 1.1.1.1 -i 5 -W 1000')
+await $({
+  env: {
+    ANYBAR_INIT: 'hollow',
+    ANYBAR_TITLE: 'anybar-ping'
+  }
+})`open -a AnyBar`
+
+const subprocess = execaCommand(
+  `ping ${source} -i ${interval / 1000} -W ${timeout}`
+)
+
+process.send('ACK')
 
 const getTime = data => {
   const [, time] = data.split('time=')
@@ -13,10 +24,16 @@ const getTime = data => {
   return Number(time.replace(' ms', ''))
 }
 
+const getColor = time => {
+  if (time < 3000) return 'green'
+  if (time < 5000) return 'orange'
+  return 'red'
+}
+
 subprocess.stdout.on('data', data => {
   const info = data.toString().replace(/(\r\n|\n|\r)/gm, '')
   const time = getTime(info)
-  if (time < 3000) send('green')
-  else if (time < 1000) send('orange')
-  else send('red')
+  const color = getColor(time)
+  if (verbose) console.log({ info, time, color })
+  send(color)
 })
