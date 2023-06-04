@@ -1,5 +1,11 @@
 # anybar-ping
 
+<p align="center">
+  <br>
+  <img src="/demo.png" alt="anybar-ping">
+  <br>
+</p>
+
 ![Last version](https://img.shields.io/github/tag/Kikobeats/anybar-ping.svg?style=flat-square)
 [![NPM Status](https://img.shields.io/npm/dm/anybar-ping.svg?style=flat-square)](https://www.npmjs.org/package/anybar-ping)
 

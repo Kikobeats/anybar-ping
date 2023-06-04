@@ -1,4 +1,3 @@
-import { setTimeout } from 'timers/promises'
 import { execaNode } from 'execa'
 import { readFileSync } from 'fs'
 import { join } from 'path'
