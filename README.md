@@ -22,7 +22,7 @@ $ npm install anybar-ping --global
 
 ## Usage
 
-```bash
+```
 $ anybar-ping --help
 
 Usage
