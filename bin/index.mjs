@@ -1,7 +1,10 @@
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
 import { execaNode } from 'execa'
 import { readFileSync } from 'fs'
-import { join } from 'path'
 import mri from 'mri'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const flags = mri(process.argv.slice(3), {
   default: { verbose: false, interval: 5000, timeout: 1000, source: '1.1.1.1' }
@@ -10,7 +13,7 @@ const flags = mri(process.argv.slice(3), {
 const run = (command, { background = false } = {}) =>
   new Promise(resolve => {
     const subprocess = execaNode(
-      join(`bin/${command}.mjs`),
+      join(__dirname, `${command}.mjs`),
       [JSON.stringify(flags)],
       {
         stdio: flags.verbose ? 'inherit' : undefined,
@@ -24,7 +27,7 @@ const command = process.argv[2]
 
 if (!['start', 'stop'].includes(command)) {
   console.log()
-  console.log(readFileSync('bin/help.txt').toString())
+  console.log(readFileSync(join(__dirname, 'help.txt')).toString())
   process.exit()
 }
 
