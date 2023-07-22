@@ -26,7 +26,7 @@ const run = (command, { background = false } = {}) =>
         detached: background
       }
     )
-    background ? subprocess.once('message', resolve) : resolve(subprocess)
+    background ? subprocess.once('spawn', resolve) : resolve(subprocess)
   })
 
 const command = process.argv[2]

@@ -16,8 +16,6 @@ const subprocess = execaCommand(
   `ping ${dns} -i ${interval / 1000} -W ${timeout}`
 )
 
-process.send('ACK')
-
 const getTime = data => {
   const [, time] = data.split('time=')
   if (!time) return
