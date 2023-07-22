@@ -1,7 +1,9 @@
 import psList from 'ps-list'
 
+const { title } = JSON.parse(process.argv[2])
+
 const anybarPing = await psList().then(psList =>
-  psList.find(({ name }) => name === 'anybar-ping')
+  psList.find(({ name }) => name === title)
 )
 
 const anybar = await psList().then(psList =>

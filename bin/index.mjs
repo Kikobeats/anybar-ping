@@ -7,7 +7,13 @@ import mri from 'mri'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const flags = mri(process.argv.slice(3), {
-  default: { verbose: false, interval: 5000, timeout: 1000, source: '1.1.1.1' }
+  default: {
+    verbose: false,
+    interval: 5000,
+    timeout: 1000,
+    dns: '1.1.1.1',
+    title: 'AnyBar Ping'
+  }
 })
 
 const run = (command, { background = false } = {}) =>

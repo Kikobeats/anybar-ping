@@ -1,19 +1,19 @@
 import { $, execaCommand } from 'execa'
 import send from 'anybar'
 
-process.title = 'anybar-ping'
+const { dns, verbose, interval, timeout, title } = JSON.parse(process.argv[2])
 
-const { source, verbose, interval, timeout } = JSON.parse(process.argv[2] ?? '')
+process.title = title
 
 await $({
   env: {
     ANYBAR_INIT: 'hollow',
-    ANYBAR_TITLE: 'anybar-ping'
+    ANYBAR_TITLE: title
   }
 })`open -a AnyBar`
 
 const subprocess = execaCommand(
-  `ping ${source} -i ${interval / 1000} -W ${timeout}`
+  `ping ${dns} -i ${interval / 1000} -W ${timeout}`
 )
 
 process.send('ACK')
