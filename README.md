@@ -26,7 +26,7 @@ $ npm install anybar-ping --global
 $ anybar-ping --help
 
 Usage
-  anybar <start|stop> [flags]
+  anybar-ping <start|stop> [flags]
 
 Flags
   --debug       Enable verbose log level [default=false].

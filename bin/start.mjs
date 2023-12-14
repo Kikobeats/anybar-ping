@@ -1,20 +1,18 @@
-import { $, execaCommand } from 'execa'
+import $ from 'tinyspawn'
 import send from 'anybar'
 
 const { dns, verbose, interval, timeout, title } = JSON.parse(process.argv[2])
 
 process.title = title
 
-await $({
+await $('open -a AnyBar', {
   env: {
     ANYBAR_INIT: 'hollow',
     ANYBAR_TITLE: title
   }
-})`open -a AnyBar`
+})
 
-const subprocess = execaCommand(
-  `ping ${dns} -i ${interval / 1000} -W ${timeout}`
-)
+const subprocess = $(`ping ${dns} -i ${interval / 1000} -W ${timeout}`)
 
 const getTime = data => {
   const [, time] = data.split('time=')

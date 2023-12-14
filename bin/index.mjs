@@ -1,7 +1,7 @@
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
-import { execaNode } from 'execa'
 import { readFileSync } from 'fs'
+import $ from 'tinyspawn'
 import mri from 'mri'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -18,8 +18,8 @@ const flags = mri(process.argv.slice(3), {
 
 const run = (command, { background = false } = {}) =>
   new Promise(resolve => {
-    const subprocess = execaNode(
-      join(__dirname, `${command}.mjs`),
+    const subprocess = $(
+      'node' + ' ' + join(__dirname, `${command}.mjs`),
       [JSON.stringify(flags)],
       {
         stdio: flags.verbose ? 'inherit' : undefined,
