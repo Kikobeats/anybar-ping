@@ -28,7 +28,6 @@
   "dependencies": {
     "anybar": "~5.1.0",
     "mri": "~1.2.0",
-    "open": "~9.1.0",
     "ps-list": "~8.1.1",
     "tinyspawn": "~1.2.1"
   },
