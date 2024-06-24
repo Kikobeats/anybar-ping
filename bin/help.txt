@@ -2,7 +2,7 @@ Usage
   anybar <start|stop> [flags]
 
 Flags
-  --debug       Enable verbose log level [default=false].
+  --verbose     Enable verbose log level [default=false].
   --interval    Wait N milliseconds between sending each packet [default=5000].
   --source      Use the following IP address as the source address in outgoing packets [default=1.1.1.1].
   --timeout     Time in milliseconds to wait for a reply for each packet sent [default=1000].

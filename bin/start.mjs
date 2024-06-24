@@ -20,7 +20,7 @@ const getTime = data => {
   return Number(time.replace(' ms', ''))
 }
 
-const getColor = time => (time ? (time < 500 ? 'green' : 'orange') : 'red')
+const getColor = time => (time ? (time < 300 ? 'green' : 'orange') : 'red')
 
 subprocess.stdout.on('data', data => {
   const info = data.toString().replace(/(\r\n|\n|\r)/gm, '')
