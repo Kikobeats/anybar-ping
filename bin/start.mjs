@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import $ from 'tinyspawn'
 import send from 'anybar'
 
