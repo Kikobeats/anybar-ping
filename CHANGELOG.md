@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.14 (2024-06-25)
+
 ### [1.0.13](https://github.com/Kikobeats/anybar-ping/compare/v1.0.12...v1.0.13) (2024-06-24)
 
 ### 1.0.12 (2024-06-20)
