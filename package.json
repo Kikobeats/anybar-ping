@@ -2,7 +2,7 @@
   "name": "anybar-ping",
   "description": "Menubar status indicator for internet health check.",
   "homepage": "https://github.com/Kikobeats/anybar-ping",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "exports": {
     ".": "./cli/index.js"
   },
