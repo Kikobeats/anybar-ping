@@ -1,6 +1,6 @@
 {
   "name": "anybar-ping",
-  "description": "Menubar status indicator for internet health check.",
+  "description": "Menubar status indicator that pings the network and shows internet health in AnyBar on macOS.",
   "homepage": "https://github.com/Kikobeats/anybar-ping",
   "version": "1.0.25",
   "exports": {
@@ -29,7 +29,15 @@
   },
   "keywords": [
     "anybar",
-    "ping"
+    "connectivity",
+    "health",
+    "indicator",
+    "internet",
+    "macos",
+    "menubar",
+    "network",
+    "ping",
+    "status"
   ],
   "dependencies": {
     "anybar": "~5.1.0",
@@ -40,7 +48,6 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@ksmithut/prettier-standard": "latest",
     "ci-publish": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
@@ -83,7 +90,7 @@
   },
   "nano-staged": {
     "*.js": [
-      "prettier-standard",
+      "npx @kikobeats/prettier-standard",
       "standard --fix"
     ],
     "*.md": [
