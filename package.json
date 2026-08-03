@@ -2,7 +2,7 @@
   "name": "anybar-ping",
   "description": "Menubar status indicator that pings the network and shows internet health in AnyBar on macOS.",
   "homepage": "https://github.com/Kikobeats/anybar-ping",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "exports": {
     ".": "./cli/index.js"
   },
